@@ -1,0 +1,84 @@
+{
+  "name": "n8n-nodes-prismic",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Prismic headless CMS providing 8 resources and 35+ operations for content retrieval, querying, multi-language support, and workflow automation. Includes polling trigger for content change detection.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-prismic.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-prismic#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-prismic/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "prismic",
+    "headless-cms",
+    "cms",
+    "content-management",
+    "content-api",
+    "jamstack",
+    "slicemachine",
+    "localization",
+    "multi-language",
+    "automation",
+    "workflow"
+  ],
+  "main": "dist/nodes/Prismic/Prismic.node.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/PrismicApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Prismic/Prismic.node.js",
+      "dist/nodes/Prismic/PrismicTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.0",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-svg-sprite": "^2.0.3",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.27.0",
+    "prettier": "^3.2.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^1.27.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
